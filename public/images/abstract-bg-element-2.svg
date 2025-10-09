@@ -1,0 +1,34 @@
+<svg width="600" height="800" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="greyFlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B7280;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#374151;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#1F2937;stop-opacity:0.1" />
+    </linearGradient>
+    <radialGradient id="goldMist" cx="30%" cy="70%" r="50%">
+      <stop offset="0%" style="stop-color:#FBBF24;stop-opacity:0.4" />
+      <stop offset="60%" style="stop-color:#F59E0B;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:0" />
+    </radialGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+  
+  <!-- Vertical flowing forms -->
+  <path d="M0 0 Q150 200 100 400 T200 800 L0 800 Z" fill="url(#greyFlow)" filter="url(#softBlur)"/>
+  <path d="M600 0 Q450 300 500 500 T400 800 L600 800 Z" fill="url(#goldMist)" filter="url(#softBlur)"/>
+  
+  <!-- Swirling mist -->
+  <ellipse cx="300" cy="200" rx="150" ry="80" fill="#FBBF24" opacity="0.2" filter="url(#softBlur)" transform="rotate(45 300 200)"/>
+  <ellipse cx="100" cy="600" rx="120" ry="60" fill="#6B7280" opacity="0.3" filter="url(#softBlur)" transform="rotate(-30 100 600)"/>
+  
+  <!-- Floating particles -->
+  <circle cx="200" cy="150" r="20" fill="#FCD34D" opacity="0.4" filter="url(#softBlur)"/>
+  <circle cx="450" cy="400" r="25" fill="#374151" opacity="0.3" filter="url(#softBlur)"/>
+  <circle cx="350" cy="650" r="15" fill="#F59E0B" opacity="0.5" filter="url(#softBlur)"/>
+  
+  <!-- Abstract tendrils -->
+  <path d="M50 100 Q200 150 150 300 Q100 450 250 500" stroke="#FBBF24" stroke-width="8" fill="none" opacity="0.3" filter="url(#softBlur)"/>
+  <path d="M550 200 Q400 250 450 400 Q500 550 350 600" stroke="#6B7280" stroke-width="6" fill="none" opacity="0.4" filter="url(#softBlur)"/>
+</svg>

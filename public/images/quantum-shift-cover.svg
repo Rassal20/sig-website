@@ -1,0 +1,87 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="quantumBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#064E3B;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#065F46;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#0D9488;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14B8A6;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="energyCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#059669;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:0.3" />
+    </radialGradient>
+    <filter id="quantumGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Quantum background -->
+  <rect width="400" height="600" fill="url(#quantumBg)"/>
+  
+  <!-- Quantum field grid -->
+  <defs>
+    <pattern id="quantumGrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#10B981" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="600" fill="url(#quantumGrid)"/>
+  
+  <!-- Central quantum core -->
+  <circle cx="200" cy="250" r="50" fill="url(#energyCore)" filter="url(#quantumGlow)"/>
+  <circle cx="200" cy="250" r="35" fill="#10B981" opacity="0.8"/>
+  <circle cx="200" cy="250" r="20" fill="#34D399" opacity="0.9"/>
+  
+  <!-- Orbiting particles -->
+  <circle cx="260" cy="220" r="4" fill="#34D399" filter="url(#quantumGlow)">
+    <animateTransform attributeName="transform" type="rotate" values="0 200 250;360 200 250" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="280" r="3" fill="#6EE7B7" filter="url(#quantumGlow)">
+    <animateTransform attributeName="transform" type="rotate" values="0 200 250;-360 200 250" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="230" cy="300" r="2" fill="#A7F3D0" filter="url(#quantumGlow)">
+    <animateTransform attributeName="transform" type="rotate" values="0 200 250;360 200 250" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Quantum tunnels/portals -->
+  <ellipse cx="100" cy="150" rx="25" ry="40" fill="none" stroke="#10B981" stroke-width="3" opacity="0.7" filter="url(#quantumGlow)"/>
+  <ellipse cx="300" cy="350" rx="30" ry="45" fill="none" stroke="#14B8A6" stroke-width="3" opacity="0.6" filter="url(#quantumGlow)"/>
+  
+  <!-- Reality distortion waves -->
+  <path d="M50 200 Q100 180 150 200 T250 200" stroke="#34D399" stroke-width="2" fill="none" opacity="0.8" filter="url(#quantumGlow)"/>
+  <path d="M350 300 Q300 280 250 300 T150 300" stroke="#6EE7B7" stroke-width="2" fill="none" opacity="0.7" filter="url(#quantumGlow)"/>
+  
+  <!-- Floating geometric shapes -->
+  <polygon points="80,120 90,100 110,100 120,120 110,140 90,140" fill="#10B981" opacity="0.6" transform="rotate(45 100 120)"/>
+  <rect x="310" y="180" width="20" height="20" fill="#14B8A6" opacity="0.7" transform="rotate(30 320 190)"/>
+  <polygon points="150,380 160,370 170,380 160,390" fill="#34D399" opacity="0.8" transform="rotate(-20 160 380)"/>
+  
+  <!-- Quantum equations/symbols -->
+  <text x="120" y="100" font-family="monospace" font-size="14" fill="#A7F3D0" opacity="0.7" transform="rotate(-15 120 100)">ψ</text>
+  <text x="280" y="140" font-family="monospace" font-size="12" fill="#6EE7B7" opacity="0.6" transform="rotate(20 280 140)">∆E∆t</text>
+  <text x="320" y="400" font-family="monospace" font-size="16" fill="#34D399" opacity="0.8" transform="rotate(-10 320 400)">ℏ</text>
+  
+  <!-- Energy streams -->
+  <line x1="200" y1="200" x2="200" y2="100" stroke="#10B981" stroke-width="3" opacity="0.6" filter="url(#quantumGlow)"/>
+  <line x1="200" y1="300" x2="200" y2="400" stroke="#14B8A6" stroke-width="3" opacity="0.6" filter="url(#quantumGlow)"/>
+  <line x1="150" y1="250" x2="50" y2="250" stroke="#34D399" stroke-width="3" opacity="0.6" filter="url(#quantumGlow)"/>
+  <line x1="250" y1="250" x2="350" y2="250" stroke="#6EE7B7" stroke-width="3" opacity="0.6" filter="url(#quantumGlow)"/>
+  
+  <!-- Title area -->
+  <rect x="0" y="450" width="400" height="150" fill="rgba(0,0,0,0.8)"/>
+  
+  <!-- Game title -->
+  <text x="200" y="485" font-family="sans-serif" font-size="24" font-weight="bold" fill="#10B981" text-anchor="middle">QUANTUM</text>
+  <text x="200" y="515" font-family="sans-serif" font-size="24" font-weight="bold" fill="#34D399" text-anchor="middle">SHIFT</text>
+  
+  <!-- Genre -->
+  <text x="200" y="545" font-family="sans-serif" font-size="14" fill="#D1D5DB" text-anchor="middle">SCI-FI PUZZLE</text>
+  
+  <!-- Status badge -->
+  <rect x="140" y="565" width="120" height="25" rx="12" fill="#10B981"/>
+  <text x="200" y="580" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FFF" text-anchor="middle">IN DEVELOPMENT</text>
+</svg>

@@ -1,0 +1,76 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cyberpunkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1E293B;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#7C2D92;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="neonFilter">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="600" fill="url(#cyberpunkBg)"/>
+  
+  <!-- City skyline -->
+  <rect x="0" y="350" width="50" height="150" fill="#1F2937"/>
+  <rect x="60" y="300" width="40" height="200" fill="#374151"/>
+  <rect x="110" y="320" width="35" height="180" fill="#1F2937"/>
+  <rect x="155" y="280" width="45" height="220" fill="#374151"/>
+  <rect x="210" y="310" width="38" height="190" fill="#1F2937"/>
+  <rect x="258" y="290" width="42" height="210" fill="#374151"/>
+  <rect x="310" y="330" width="40" height="170" fill="#1F2937"/>
+  <rect x="360" y="305" width="40" height="195" fill="#374151"/>
+  
+  <!-- Neon building lights -->
+  <rect x="65" y="320" width="30" height="3" fill="#06B6D4" filter="url(#neonFilter)"/>
+  <rect x="65" y="340" width="30" height="3" fill="#8B5CF6" filter="url(#neonFilter)"/>
+  <rect x="160" y="300" width="35" height="3" fill="#EC4899" filter="url(#neonFilter)"/>
+  <rect x="160" y="320" width="35" height="3" fill="#06B6D4" filter="url(#neonFilter)"/>
+  <rect x="260" y="310" width="35" height="3" fill="#8B5CF6" filter="url(#neonFilter)"/>
+  
+  <!-- Racing car silhouette -->
+  <path d="M100 250 L300 250 L320 270 L300 290 L280 290 L270 280 L130 280 L120 290 L100 290 L80 270 Z" fill="#374151"/>
+  <ellipse cx="130" cy="290" rx="15" ry="8" fill="#1F2937"/>
+  <ellipse cx="270" cy="290" rx="15" ry="8" fill="#1F2937"/>
+  
+  <!-- Speed lines -->
+  <line x1="50" y1="200" x2="120" y2="200" stroke="url(#neonGlow)" stroke-width="2" opacity="0.7" filter="url(#neonFilter)"/>
+  <line x1="60" y1="220" x2="140" y2="220" stroke="url(#neonGlow)" stroke-width="2" opacity="0.6" filter="url(#neonFilter)"/>
+  <line x1="40" y1="240" x2="110" y2="240" stroke="url(#neonGlow)" stroke-width="2" opacity="0.5" filter="url(#neonFilter)"/>
+  
+  <!-- Neon grid road -->
+  <line x1="0" y1="500" x2="400" y2="500" stroke="#06B6D4" stroke-width="1" opacity="0.6"/>
+  <line x1="0" y1="520" x2="400" y2="520" stroke="#06B6D4" stroke-width="1" opacity="0.4"/>
+  <line x1="0" y1="540" x2="400" y2="540" stroke="#06B6D4" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Vertical grid lines -->
+  <line x1="100" y1="500" x2="80" y2="600" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+  <line x1="200" y1="500" x2="180" y2="600" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+  <line x1="300" y1="500" x2="280" y2="600" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Title area -->
+  <rect x="0" y="450" width="400" height="150" fill="rgba(0,0,0,0.8)"/>
+  
+  <!-- Game title -->
+  <text x="200" y="485" font-family="sans-serif" font-size="26" font-weight="bold" fill="#06B6D4" text-anchor="middle" filter="url(#neonFilter)">NEON</text>
+  <text x="200" y="515" font-family="sans-serif" font-size="26" font-weight="bold" fill="#EC4899" text-anchor="middle" filter="url(#neonFilter)">VELOCITY</text>
+  
+  <!-- Genre -->
+  <text x="200" y="545" font-family="sans-serif" font-size="14" fill="#D1D5DB" text-anchor="middle">CYBERPUNK RACING</text>
+  
+  <!-- Status badge -->
+  <rect x="140" y="565" width="120" height="25" rx="12" fill="url(#neonGlow)"/>
+  <text x="200" y="580" font-family="sans-serif" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">IN DEVELOPMENT</text>
+</svg>
