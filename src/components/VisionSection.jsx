@@ -9,13 +9,14 @@ const VisionSection = () => {
       <div className="abstract-bg-2"></div>
       
       <div className="container relative z-10">
-        <div className="section-header">
+        <div className="section-header mb-8">
           <h2 
             ref={titleRef}
-            className={`animate-fade-in-up ${titleVisible ? 'visible' : ''}`}
+            className={`animate-fade-in-up mb-4 ${titleVisible ? 'visible' : ''}`}
           >
             Our Vision
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#F2C26B] to-[#E6B55C] mx-auto mb-4"></div>
         </div>
         
         <div className="section-content text-center max-w-4xl mx-auto">

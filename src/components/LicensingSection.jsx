@@ -27,31 +27,31 @@ const LicensingSection = () => {
       <div className="container relative z-10">
         {/* Section Header */}
         <motion.div 
-          className="section-header"
+          className="section-header mb-8"
           initial={{ opacity: 0, y: -30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="heading-xl text-white mb-6">
+          <h2 className="heading-xl text-white mb-4">
             <span className="text-primary">
               Licensed & Regulated
             </span>
           </h2>
-          <div className="accent-line mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-yellow-400 mx-auto mb-4"></div>
           <p className="text-body text-gray-300 max-w-2xl mx-auto">
             Schamz International Gaming is proud to be one of the first companies licensed to operate in the UAE by:
           </p>
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="section-content grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+        <div className="section-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           
           {/* Left Side - Authorities List */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4"
           >
             {authorities.map((authority, index) => (
               <motion.div
@@ -62,14 +62,12 @@ const LicensingSection = () => {
                   duration: 0.5, 
                   delay: 0.4 + (index * 0.1)
                 }}
-                className="glass-card p-6 text-center group hover:scale-105 transition-transform duration-300"
+                className="flex items-center space-x-4 py-2"
               >
-                <div className="flex items-center justify-center space-x-4">
-                  <div className="w-3 h-3 bg-gradient-to-r from-primary to-yellow-400 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                  <span className="text-lg text-gray-200 group-hover:text-white transition-colors duration-300 font-medium">
-                    {authority}
-                  </span>
-                </div>
+                <div className="w-3 h-3 bg-gradient-to-r from-primary to-yellow-400 rounded-full flex-shrink-0"></div>
+                <span className="text-lg text-gray-200 font-medium">
+                  {authority}
+                </span>
               </motion.div>
             ))}
           </motion.div>
@@ -79,7 +77,7 @@ const LicensingSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center"
+            className="flex justify-center lg:justify-center"
           >
             <div className="relative">
               {/* Custom Certified Icon */}
@@ -92,7 +90,7 @@ const LicensingSection = () => {
                   type: "spring",
                   stiffness: 100
                 }}
-                className="w-80 h-80 lg:w-96 lg:h-96 relative"
+                className="w-32 h-32 lg:w-40 lg:h-40 relative"
               >
                 <img 
                   src="/Certified Icon.svg" 

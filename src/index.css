@@ -548,3 +548,18 @@ li {
   background: var(--color-primary);
   border-radius: 1px;
 }
+
+/* Hide scrollbar for webkit browsers */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scrolling for horizontal slider */
+.overflow-x-auto {
+  scroll-behavior: smooth;
+}

@@ -4,6 +4,8 @@ import PartnershipsSection from './components/PartnershipsSection'
 import VisionSection from './components/VisionSection'
 import LicensingSection from './components/LicensingSection'
 import GamesSection from './components/GamesSection'
+import ContactUsSection from './components/ContactUsSection'
+import ContactInfoSection from './components/ContactInfoSection'
 import ParticleBackground from './components/ParticleBackground'
 import FloatingElements from './components/FloatingElements'
 import './App.css'
@@ -19,6 +21,8 @@ function App() {
       <VisionSection />
       <LicensingSection />
       <GamesSection />
+      <ContactUsSection />
+      <ContactInfoSection />
       
       {/* Copyright Footer */}
       <footer className="relative z-10 bg-black/20 backdrop-blur-sm py-6 mt-20">

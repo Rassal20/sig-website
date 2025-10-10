@@ -36,10 +36,10 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="section-header"
+          className="section-header mb-8"
         >
           <h2 className="text-h2 font-semibold mb-4">About Us</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#F2C26B] to-[#E6B55C] mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#F2C26B] to-[#E6B55C] mx-auto mb-4"></div>
         </motion.div>
         
         {/* Content Cards */}

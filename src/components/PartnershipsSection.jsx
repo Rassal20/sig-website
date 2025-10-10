@@ -43,16 +43,16 @@ const PartnershipsSection = () => {
     <section id="partnerships" className="section bg-gradient-dark relative overflow-hidden">
       <div className="container relative z-10">
         <motion.div 
-          className="section-header"
+          className="section-header mb-8"
           ref={titleRef}
           initial={{ opacity: 0, y: -30 }}
           animate={titleVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="heading-xl text-white mb-6">
+          <h2 className="heading-xl text-white mb-4">
             Strategic Partnerships
           </h2>
-          <div className="accent-line mx-auto mb-8"></div>
+          <div className="accent-line mx-auto mb-4"></div>
           <p className="text-body text-gray-300 max-w-2xl mx-auto">
             Collaborating with industry leaders to deliver exceptional gaming experiences
           </p>
