@@ -8,27 +8,29 @@ const HeroSection = () => {
   const [descriptionRef, descriptionVisible] = useScrollAnimation(0.2);
 
   return (
-    <section id="home" className="section-full-height relative overflow-hidden">
-      {/* Background Image - positioned on the left behind all elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+    <section id="home" className="relative w-full min-h-screen overflow-hidden">
+      {/* Background image positioned behind all content */}
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.3 }}
+        className="absolute inset-0 w-full h-full flex items-end justify-start z-0"
+        style={{ left: '-100px' }}
+      >
         <img 
           src="/images/7507_ho_00_p_2048x1536-1-1.png" 
-          alt="Background" 
-          className="absolute left-0 top-0 h-full w-auto object-cover object-left"
-          style={{ 
-            maxWidth: '70%', 
-            minHeight: '100vh',
-            filter: 'brightness(0.7) contrast(1.1)'
+          alt="Gaming Character" 
+          className="h-full w-auto object-cover object-bottom drop-shadow-2xl scale-100 sm:scale-105 lg:scale-110 filter brightness-110"
+          style={{
+            filter: "drop-shadow(0 0 30px rgba(242, 194, 107, 0.8)) drop-shadow(0 0 60px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 90px rgba(242, 194, 107, 0.4))"
           }}
           onLoad={() => console.log('Background image loaded successfully')}
           onError={(e) => console.error('Background image failed to load:', e)}
         />
-        {/* Overlay to ensure image is visible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/50"></div>
-      </div>
+      </motion.div>
       
-      <div className="container relative z-10">
-        <div className="flex flex-col items-center justify-start text-center min-h-screen pt-8 pb-20">
+      <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center text-center w-full h-full max-w-7xl mx-auto">
           
           {/* Logo - Made smaller and moved up more with sophisticated light tracing animation */}
           <motion.div
@@ -58,7 +60,7 @@ const HeroSection = () => {
               },
               filter: { duration: 2.8, ease: "easeInOut" }
             }}
-            className="mb-2 flex justify-center relative"
+            className="mb-1 flex justify-center relative"
           >
             {/* Light tracing effect - outer glow */}
             <motion.div
@@ -106,7 +108,7 @@ const HeroSection = () => {
               className="absolute inset-0 rounded-lg pointer-events-none"
             />
 
-            <div className="w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-white/10 rounded-lg flex items-center justify-center relative overflow-hidden">
+            <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-white/10 rounded-lg flex items-center justify-center relative overflow-hidden">
               <motion.img 
                 src="/Schamz-Gaming-Logo.svg" 
                 alt="Schamz Gaming Logo" 
@@ -160,7 +162,7 @@ const HeroSection = () => {
               type: "spring",
               stiffness: 80
             }}
-            className="mb-8"
+            className="mb-3"
           >
             <motion.p
               animate={{ 
@@ -177,7 +179,7 @@ const HeroSection = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="text-4xl md:text-6xl lg:text-8xl font-black bg-gradient-to-r from-[#F2C26B] via-[#FFD700] to-[#F2C26B] bg-clip-text text-transparent tracking-wider uppercase"
+              className="text-xl md:text-2xl lg:text-3xl font-black bg-gradient-to-r from-[#F2C26B] via-[#FFD700] to-[#F2C26B] bg-clip-text text-transparent tracking-wider uppercase"
               style={{
                 filter: "drop-shadow(0 0 15px rgba(242, 194, 107, 0.6))",
                 textShadow: "0 0 20px rgba(242, 194, 107, 0.8), 0 0 40px rgba(255, 215, 0, 0.6)"
@@ -188,55 +190,39 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Main Hero Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="glass-card max-w-4xl mb-12"
+          <motion.p 
+            ref={descriptionRef}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: descriptionVisible ? 1 : 0, y: descriptionVisible ? 0 : 20 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-body text-muted mb-4 max-w-sm mx-auto font-bold"
+            style={{
+              textShadow: "0 0 10px rgba(242, 194, 107, 0.8), 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(242, 194, 107, 0.4)",
+              filter: "drop-shadow(0 0 8px rgba(242, 194, 107, 0.5))"
+            }}
           >
-            <motion.h1 
-              ref={titleRef}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: titleVisible ? 1 : 0, y: titleVisible ? 0 : 20 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-h1 font-semibold mb-6 bg-gradient-to-r from-[#F2C26B] via-[#F2C26B] to-[#E6B55C] bg-clip-text text-transparent"
+            Where Innovation Meets Entertainment. We craft extraordinary gaming experiences 
+            that push the boundaries of interactive entertainment and bring communities together.
+          </motion.p>
+          
+          {/* Call to Action Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex justify-center"
+          >
+            <button 
+              className="btn btn-primary"
+              onClick={() => {
+                const gamesSection = document.getElementById('games');
+                if (gamesSection) {
+                  gamesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
-              SCHAMZ GAMING
-            </motion.h1>
-            
-            <motion.p 
-              ref={descriptionRef}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: descriptionVisible ? 1 : 0, y: descriptionVisible ? 0 : 20 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-body text-muted mb-8 max-w-2xl mx-auto"
-            >
-              Where Innovation Meets Entertainment. We craft extraordinary gaming experiences 
-              that push the boundaries of interactive entertainment and bring communities together.
-            </motion.p>
-            
-            {/* Call to Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <button 
-                className="btn btn-primary"
-                onClick={() => {
-                  const gamesSection = document.getElementById('games');
-                  if (gamesSection) {
-                    gamesSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                Explore Our Games
-              </button>
-              <button className="btn btn-secondary">
-                Learn More
-              </button>
-            </motion.div>
+              Explore Our Games
+            </button>
           </motion.div>
           
         </div>
@@ -282,7 +268,7 @@ const HeroSection = () => {
           }}
           className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-primary/70 rounded-full"
         />
-      </div>
+        </div>
     </section>
   );
 };

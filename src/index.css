@@ -52,6 +52,9 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -64,11 +67,16 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 /* ================ TYPOGRAPHY SYSTEM ================ */
