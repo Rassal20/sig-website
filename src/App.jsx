@@ -4,7 +4,7 @@ import PartnershipsSection from './components/PartnershipsSection'
 import VisionSection from './components/VisionSection'
 import LicensingSection from './components/LicensingSection'
 import GamesSection from './components/GamesSection'
-import ContactUsSection from './components/ContactUsSection'
+import ContactForm from './components/ContactForm'
 import ContactInfoSection from './components/ContactInfoSection'
 import ParticleBackground from './components/ParticleBackground'
 import FloatingElements from './components/FloatingElements'
@@ -21,7 +21,11 @@ function App() {
       <VisionSection />
       <LicensingSection />
       <GamesSection />
-      <ContactUsSection />
+      <section id="contact" className="section relative overflow-hidden">
+        <div className="container">
+          <ContactForm />
+        </div>
+      </section>
       <ContactInfoSection />
       
       {/* Copyright Footer */}

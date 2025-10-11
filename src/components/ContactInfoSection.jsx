@@ -33,10 +33,7 @@ const ContactInfoSection = () => {
         <img 
           src="/images/bbb562e9-7515-4cfe-9fb0-75074c3e37d4.png" 
           alt="Gaming Character" 
-          className="h-full w-auto object-cover object-center drop-shadow-2xl scale-100 sm:scale-105 lg:scale-110 filter brightness-110"
-          style={{
-            filter: "drop-shadow(0 0 30px rgba(242, 194, 107, 0.8)) drop-shadow(0 0 60px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 90px rgba(242, 194, 107, 0.4))"
-          }}
+          className="h-full w-auto object-cover object-center scale-100 sm:scale-105 lg:scale-110 filter brightness-110"
           onLoad={() => console.log('Contact info background image loaded successfully')}
           onError={(e) => console.error('Contact info background image failed to load:', e)}
         />
@@ -69,32 +66,45 @@ const ContactInfoSection = () => {
         >
           
           {/* Single Contact Information Card - Center Aligned */}
-          <motion.div variants={itemVariants} className="glass-card text-left max-w-md">
-            <div className="space-y-6">
-              
+          <motion.div
+            variants={itemVariants}
+            className="glass-card text-center w-full mx-auto relative overflow-hidden backdrop-blur-xl shadow-xl transform md:-translate-x-2"
+            style={{
+              width: '100%',
+              maxWidth: '500px',
+              margin: '0 auto',
+              padding: 'clamp(1.5rem, 3vh, 2.5rem)',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              backdropFilter: 'blur(8px) saturate(120%)',
+              WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+              boxShadow: '0 4px 15px rgba(0, 0, 0, 0.4)',
+              borderRadius: '2rem'
+            }}
+          >
+            <div className="space-y-[3vh]">
               {/* Office Addresses */}
               <div>
-                <h3 className="text-h3 font-medium mb-3 text-primary">Office Addresses</h3>
-                <div className="text-body text-muted space-y-3">
-                  <div>
-                    <p className="font-medium text-primary">Abu Dhabi Office</p>
-                    <p>Sofitel 17-02, Abu Dhabi</p>
+                <h3 className="text-h3 font-semibold mb-[1.5vh] text-primary">Office Addresses</h3>
+                <div className="text-body text-muted space-y-[3vh]">
+                  <div className="space-y-[1.2vh]">
+                    <p className="font-semibold text-primary text-lg">Abu Dhabi Office</p>
+                    <p className="text-gray-300 text-base leading-relaxed">Sofitel 17-02, Abu Dhabi</p>
                   </div>
-                  <div>
-                    <p className="font-medium text-primary">Dubai Office</p>
-                    <p>Burj Khalifa 142-01, Dubai</p>
+                  <div className="space-y-[1.2vh]">
+                    <p className="font-semibold text-primary text-lg">Dubai Office</p>
+                    <p className="text-gray-300 text-base leading-relaxed">Burj Khalifa 142-01, Dubai</p>
                   </div>
                 </div>
               </div>
-
+              
               {/* Email Contact */}
               <div>
-                <h3 className="text-h3 font-medium mb-3 text-primary">Email</h3>
+                <h3 className="text-h3 font-semibold mb-[1.5vh] text-primary">Email</h3>
                 <div className="text-body text-muted">
-                  <p>info@shamz-gaming.ae</p>
+                  <p className="text-gray-300 text-lg font-medium">info@shamz-gaming.ae</p>
                 </div>
               </div>
-
             </div>
           </motion.div>
 

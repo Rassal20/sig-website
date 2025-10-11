@@ -139,13 +139,15 @@ const GamesSection = () => {
         <div className="relative">
           <div 
             ref={scrollRef}
-            className="flex overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar pb-8 justify-center"
+            className="flex overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar py-4 justify-center"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
               paddingLeft: 'calc(50vw - 160px)', // Center the first card
-              paddingRight: 'calc(50vw - 160px)' // Center the last card
+              paddingRight: 'calc(50vw - 160px)', // Center the last card
+              paddingTop: '16px', // Add vertical padding for hover scaling
+              paddingBottom: '24px' // Extra bottom padding
             }}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -161,9 +163,9 @@ const GamesSection = () => {
                     : ''
                 }`}
                 style={{
-                  // Thinner card dimensions with proper proportions
-                  width: 'clamp(280px, 18vw, 320px)', // Much thinner cards
-                  height: 'clamp(380px, 28vh, 420px)', // Adjusted height for square thumbnail + content
+                  // Smaller card dimensions with proper proportions
+                  width: 'clamp(240px, 15vw, 280px)', // Reduced from 18vw to 15vw
+                  height: 'clamp(340px, 25vh, 380px)', // Reduced from 28vh to 25vh
                   marginLeft: 'clamp(8px, 1vw, 16px)', // Reduced margins
                   marginRight: 'clamp(8px, 1vw, 16px)'
                 }}
@@ -192,7 +194,7 @@ const GamesSection = () => {
                   <div 
                     className="relative overflow-hidden"
                     style={{
-                      height: '280px', // Fixed height for square thumbnail
+                      height: '240px', // Reduced from 280px to match smaller card
                       width: '100%',
                       borderTopLeftRadius: '1.5rem',
                       borderTopRightRadius: '1.5rem'
@@ -219,7 +221,7 @@ const GamesSection = () => {
                   <div 
                     className="flex flex-col justify-center items-center text-center px-4 py-3"
                     style={{
-                      height: 'calc(100% - 280px)', // Remaining height after square thumbnail
+                      height: 'calc(100% - 240px)', // Updated to match new image height
                       minHeight: '100px' // Ensure minimum space for content
                     }}
                   >
@@ -229,7 +231,7 @@ const GamesSection = () => {
                       style={{
                         fontFamily: 'Montserrat, sans-serif',
                         fontWeight: 700,
-                        fontSize: '18px', // Fixed size for consistency
+                        fontSize: 'calc(var(--font-size-ui) + 0.125rem)',
                         color: '#FFD700',
                         lineHeight: '1.2'
                       }}
@@ -243,7 +245,7 @@ const GamesSection = () => {
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 400,
-                        fontSize: '14px', // Fixed size for consistency
+                        fontSize: 'calc(var(--font-size-ui) - 0.0625rem)',
                         color: '#AAAAAA',
                         lineHeight: '1.3'
                       }}

@@ -77,7 +77,7 @@ const ParticleBackground = () => {
     }
 
     // Initialize particles
-    const particleCount = Math.min(50, Math.floor(canvas.width * canvas.height / 15000));
+    const particleCount = Math.min(100, Math.floor(canvas.width * canvas.height / 7500));
     particles.length = 0;
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());

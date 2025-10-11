@@ -89,7 +89,7 @@ const FloatingElements = () => {
 
     // Create multiple floating elements
     const elements = [];
-    const elementCount = Math.min(8, Math.floor(window.innerWidth / 200));
+    const elementCount = Math.min(16, Math.floor(window.innerWidth / 100));
     
     for (let i = 0; i < elementCount; i++) {
       elements.push(createFloatingElement(i));
