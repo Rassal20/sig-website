@@ -74,22 +74,24 @@ const PartnershipsSection = () => {
           animate="visible"
         >
           {partnerships.map((partner, index) => (
-            <motion.div 
-              key={index} 
-              className="glass-card p-8 text-center group hover:scale-105 transition-transform duration-300"
+            <motion.a 
+              key={index}
+              href={partner.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit partner ${partner.name}`}
+              className="glass-card p-8 text-center group hover:scale-105 transition-transform duration-300 no-underline"
               variants={cardVariants}
               animate={visiblePartners.has(index) ? "visible" : "hidden"}
               whileHover={{ y: -10 }}
             >
-              <h3 className="heading-md text-white mb-4 transition-colors">
-                <a href={partner.link} target="_blank" rel="noopener noreferrer" className="no-underline text-[var(--color-primary)]">
-                  {partner.name}
-                </a>
+              <h3 className="heading-md text-[var(--color-primary)] mb-4 transition-colors">
+                {partner.name}
               </h3>
               <p className="text-gray-300 leading-relaxed">
                 {partner.description}
               </p>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
         
