@@ -51,7 +51,7 @@ const LicensingSection = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-4 text-center"
           >
             {authorities.map((authority, index) => (
               <motion.div
@@ -62,10 +62,10 @@ const LicensingSection = () => {
                   duration: 0.5, 
                   delay: 0.4 + (index * 0.1)
                 }}
-                className="flex items-center space-x-4 py-2"
+                className="flex items-center justify-center space-x-4 py-2"
               >
                 <div className="w-3 h-3 bg-gradient-to-r from-primary to-yellow-400 rounded-full flex-shrink-0"></div>
-                <span className="text-lg text-gray-200 font-medium">
+                <span className="text-lg font-medium text-[var(--color-primary)]">
                   {authority}
                 </span>
               </motion.div>
@@ -90,7 +90,7 @@ const LicensingSection = () => {
                   type: "spring",
                   stiffness: 100
                 }}
-                className="w-32 h-32 lg:w-40 lg:h-40 relative"
+                className="w-24 h-24 lg:w-28 lg:h-28 relative"
               >
                 <img 
                   src="/Certified Icon.svg" 

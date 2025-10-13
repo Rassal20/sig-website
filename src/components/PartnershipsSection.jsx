@@ -10,12 +10,20 @@ const PartnershipsSection = () => {
     {
       name: "Nobellium",
       description: "Partnership with Budapest-based gaming development company specializing in innovative game solutions.",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      link: "https://store.steampowered.com/app/3307750/Xontainer_Meta_Space/"
     },
     {
       name: "Wunderino",
       description: "Strategic alliance with Europe's biggest online gaming platform for expanded market reach.",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      link: "https://www.wunderino.com/en/"
+    },
+    {
+      name: "Spinix",
+      description: "Strategic partnership with Spinix.",
+      color: "from-green-500 to-emerald-500",
+      link: "https://spinix.ae/"
     }
   ];
 
@@ -73,8 +81,10 @@ const PartnershipsSection = () => {
               animate={visiblePartners.has(index) ? "visible" : "hidden"}
               whileHover={{ y: -10 }}
             >
-              <h3 className="heading-md text-white mb-4 group-hover:text-accent-primary transition-colors">
-                {partner.name}
+              <h3 className="heading-md text-white mb-4 transition-colors">
+                <a href={partner.link} target="_blank" rel="noopener noreferrer" className="no-underline text-[var(--color-primary)]">
+                  {partner.name}
+                </a>
               </h3>
               <p className="text-gray-300 leading-relaxed">
                 {partner.description}

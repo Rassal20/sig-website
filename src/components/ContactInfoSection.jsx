@@ -28,7 +28,7 @@ const ContactInfoSection = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
         className="absolute inset-0 w-full h-full flex items-center justify-end z-0"
-        style={{ right: '-100px' }}
+        style={{ right: '-140px' }}
       >
         <img 
           src="/images/bbb562e9-7515-4cfe-9fb0-75074c3e37d4.png" 
@@ -47,11 +47,11 @@ const ContactInfoSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="section-header"
+          className="section-header text-left"
         >
           <h2 className="text-h2 font-semibold mb-4">Contact Information</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#F2C26B] to-[#E6B55C] mx-auto mb-4"></div>
-          <p className="text-body text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-[#F2C26B] to-[#E6B55C] mb-4"></div>
+          <p className="text-body text-gray-300 max-w-2xl">
             Connect with us through any of these channels. We're here to help bring your gaming vision to life.
           </p>
         </motion.div>
@@ -62,49 +62,29 @@ const ContactInfoSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="section-content max-w-4xl mx-auto flex justify-center"
+          className="section-content max-w-4xl mx-auto"
         >
           
-          {/* Single Contact Information Card - Center Aligned */}
+          {/* Left-aligned Contact Information (Card removed) */}
           <motion.div
             variants={itemVariants}
-            className="glass-card text-center w-full mx-auto relative overflow-hidden backdrop-blur-xl shadow-xl transform md:-translate-x-2"
-            style={{
-              width: '100%',
-              maxWidth: '500px',
-              margin: '0 auto',
-              padding: 'clamp(1.5rem, 3vh, 2.5rem)',
-              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              backdropFilter: 'blur(8px) saturate(120%)',
-              WebkitBackdropFilter: 'blur(8px) saturate(120%)',
-              boxShadow: '0 4px 15px rgba(0, 0, 0, 0.4)',
-              borderRadius: '2rem'
-            }}
+            className="w-full max-w-xl text-left"
           >
-            <div className="space-y-[3vh]">
-              {/* Office Addresses */}
+            <div>
+              <h3 className="text-h3 font-semibold text-primary mb-2">Office Addresses</h3>
               <div>
-                <h3 className="text-h3 font-semibold mb-[1.5vh] text-primary">Office Addresses</h3>
-                <div className="text-body text-muted space-y-[3vh]">
-                  <div className="space-y-[1.2vh]">
-                    <p className="font-semibold text-primary text-lg">Abu Dhabi Office</p>
-                    <p className="text-gray-300 text-base leading-relaxed">Sofitel 17-02, Abu Dhabi</p>
-                  </div>
-                  <div className="space-y-[1.2vh]">
-                    <p className="font-semibold text-primary text-lg">Dubai Office</p>
-                    <p className="text-gray-300 text-base leading-relaxed">Burj Khalifa 142-01, Dubai</p>
-                  </div>
+                <div className="mb-3">
+                  <p className="font-semibold text-primary text-lg">Abu Dhabi Office</p>
+                  <p className="text-gray-300 text-base leading-relaxed">Sofitel 17-02, Abu Dhabi</p>
+                </div>
+                <div className="mb-3">
+                  <p className="font-semibold text-primary text-lg">Dubai Office</p>
+                  <p className="text-gray-300 text-base leading-relaxed">Burj Khalifa 142-01, Dubai</p>
                 </div>
               </div>
-              
-              {/* Email Contact */}
-              <div>
-                <h3 className="text-h3 font-semibold mb-[1.5vh] text-primary">Email</h3>
-                <div className="text-body text-muted">
-                  <p className="text-gray-300 text-lg font-medium">info@shamz-gaming.ae</p>
-                </div>
-              </div>
+              <div className="w-16 h-px bg-white/20 my-3"></div>
+              <h3 className="text-h3 font-semibold text-primary mb-2">Email</h3>
+              <p className="text-gray-300 text-lg font-medium">info@shamz-gaming.ae</p>
             </div>
           </motion.div>
 
