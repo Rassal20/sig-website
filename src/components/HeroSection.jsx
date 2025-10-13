@@ -20,7 +20,7 @@ const HeroSection = () => {
         <img 
           src="/images/7507_ho_00_p_2048x1536-1-1.png" 
           alt="Gaming Character" 
-          className="h-full w-auto object-cover object-bottom scale-50 sm:scale-100 lg:scale-110 -translate-x-6 sm:translate-x-0 opacity-80 filter brightness-110"
+          className="h-full w-auto object-cover object-bottom scale-100 sm:scale-105 lg:scale-110 filter brightness-110"
            onLoad={() => console.log('Background image loaded successfully')}
            onError={(e) => console.error('Background image failed to load:', e)}
         />
