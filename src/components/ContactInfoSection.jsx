@@ -107,8 +107,18 @@ const ContactInfoSection = () => {
                   </div>
                 </div>
                 <div className="w-16 h-px bg-white/20 my-4"></div>
-                <h3 className="text-h3 font-medium mb-2 text-primary">Email</h3>
-                <p className="text-body text-muted font-medium">info@schamz-gaming.ae</p>
+                <h3 className="text-h3 font-medium mb-2 text-primary">Contact Details</h3>
+                <div className="space-y-2">
+                  <div>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">Phone:</span> +971 54 473 7373</p>
+                  </div>
+                  <div>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">Email:</span> info@schamz-gaming.ae</p>
+                  </div>
+                  <div>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">P.O Box:</span> 27772</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
