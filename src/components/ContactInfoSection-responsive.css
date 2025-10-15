@@ -1,0 +1,16 @@
+/* Force responsive layout for ContactInfoSection */
+.contact-info-container {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+@media (min-width: 640px) {
+  .contact-info-container {
+    flex-direction: row !important;
+  }
+  
+  .contact-info-card {
+    flex: 1 !important;
+    width: 50% !important;
+  }
+}

@@ -68,8 +68,8 @@ const GlassButton = ({
       style={{
         background: currentVariant.background,
         border: currentVariant.border,
-        backdropFilter: 'blur(20px) saturate(180%)',
-        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+        backdropFilter: 'blur(8px) saturate(150%)',
+        WebkitBackdropFilter: 'blur(8px) saturate(150%)',
       }}
       whileHover={!disabled ? {
         scale: 1.02,

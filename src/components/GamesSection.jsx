@@ -6,6 +6,7 @@ const GamesSection = () => {
   const [titleRef, titleVisible] = useScrollAnimation(0.2);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [centerCard, setCenterCard] = useState(0);
+  const [isHorizontalOrientation, setIsHorizontalOrientation] = useState(false);
   const scrollRef = useRef(null);
 
   const games = [
@@ -144,6 +145,22 @@ const GamesSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Track screen orientation for responsive positioning
+  useEffect(() => {
+    const checkOrientation = () => {
+      setIsHorizontalOrientation(window.innerWidth > window.innerHeight);
+    };
+
+    checkOrientation();
+    window.addEventListener('resize', checkOrientation);
+    window.addEventListener('orientationchange', checkOrientation);
+
+    return () => {
+      window.removeEventListener('resize', checkOrientation);
+      window.removeEventListener('orientationchange', checkOrientation);
+    };
+  }, []);
+
   // Touch and scroll handlers for mobile carousel
   const handleTouchStart = (e) => {
     const touch = e.touches[0];
@@ -239,10 +256,15 @@ const GamesSection = () => {
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
-              width: 'calc(100vw + 96px)', // Extend significantly beyond viewport
-              marginLeft: '-48px', // Pull much further left to screen edge
-              paddingLeft: '8px', // Minimal padding for very close alignment
-              paddingRight: '80px',
+              // Full viewport width to allow right overflow
+              width: '100vw',
+              // Calculate proper left positioning to align first card with container
+              // Container has max-width and is centered, so we need to account for that
+              marginLeft: `calc(-50vw + 50% - ${isHorizontalOrientation ? '32px' : '24px'})`,
+              // Left padding to align first card with container's content area
+              paddingLeft: `calc(50vw - 50% + ${isHorizontalOrientation ? '32px' : '24px'})`,
+              // Right padding to ensure last card can scroll to container's right edge
+              paddingRight: `calc(50vw - 50% + ${isHorizontalOrientation ? '32px' : '24px'})`,
               paddingTop: '16px',
               paddingBottom: '24px'
             }}

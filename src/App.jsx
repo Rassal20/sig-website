@@ -5,6 +5,7 @@ import VisionSection from './components/VisionSection'
 import LicensingSection from './components/LicensingSection'
 import GamesSection from './components/GamesSection'
 import ContactForm from './components/ContactForm'
+
 import ContactInfoSection from './components/ContactInfoSection'
 import ParticleBackground from './components/ParticleBackground'
 import FloatingElements from './components/FloatingElements'

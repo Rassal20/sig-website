@@ -1,4 +1,6 @@
+import React from 'react';
 import { motion } from 'framer-motion';
+import './ContactInfoSection-responsive.css';
 
 const ContactInfoSection = () => {
   const containerVariants = {
@@ -12,6 +14,15 @@ const ContactInfoSection = () => {
   };
 
   const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
+  const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -56,37 +67,83 @@ const ContactInfoSection = () => {
           </p>
         </motion.div>
         
-        {/* Content - Single Contact Info Card */}
+        {/* Content - Two Column Layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="section-content max-w-4xl mx-auto"
+          className="section-content max-w-6xl mx-auto px-4"
         >
           
-          {/* Left-aligned Contact Information (Card removed) */}
-          <motion.div
-            variants={itemVariants}
-            className="w-full max-w-xl text-left"
+          {/* Two Column Layout - Force horizontal alignment with CSS classes */}
+          <div 
+            className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-12 max-w-5xl mx-auto contact-info-container"
+            style={{
+              display: 'flex',
+              flexDirection: 'column'
+            }}
           >
-            <div>
-              <h3 className="text-h3 font-semibold text-primary mb-2">Office Addresses</h3>
-              <div>
-                <div className="mb-3">
-                  <p className="font-semibold text-primary text-lg">Abu Dhabi Office</p>
-                  <p className="text-gray-300 text-base leading-relaxed">Sofitel 17-02, Abu Dhabi</p>
+            
+            {/* Left Column - Contact Details Card */}
+            <motion.div
+              variants={cardVariants}
+              className="glass-card text-center group hover:scale-101 transition-transform duration-300 w-full sm:w-1/2 flex-1 contact-info-card"
+              style={{
+                flex: '1',
+                width: '100%'
+              }}
+            >
+              <div className="text-left">
+                <h3 className="text-h3 font-medium mb-4 text-primary">Office Addresses</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="font-semibold text-primary">Abu Dhabi Office</p>
+                    <p className="text-body text-muted leading-relaxed">Sofitel 17-02, Abu Dhabi</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-primary">Dubai Office</p>
+                    <p className="text-body text-muted leading-relaxed">Burj Khalifa 142-01, Dubai</p>
+                  </div>
                 </div>
-                <div className="mb-3">
-                  <p className="font-semibold text-primary text-lg">Dubai Office</p>
-                  <p className="text-gray-300 text-base leading-relaxed">Burj Khalifa 142-01, Dubai</p>
+                <div className="w-16 h-px bg-white/20 my-4"></div>
+                <h3 className="text-h3 font-medium mb-2 text-primary">Email</h3>
+                <p className="text-body text-muted font-medium">info@schamz-gaming.ae</p>
+              </div>
+            </motion.div>
+
+            {/* Right Column - Financial Channel Card */}
+            <motion.div
+              variants={cardVariants}
+              className="glass-card text-center group hover:scale-101 transition-transform duration-300 w-full sm:w-1/2 flex-1 contact-info-card"
+              style={{
+                flex: '1',
+                width: '100%'
+              }}
+            >
+              <div className="text-left">
+                <h3 className="text-h3 font-medium mb-4 text-primary">Financial Channel</h3>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">Bank Name:</span> UBL</p>
+                  </div>
+                  <div>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">Account Name:</span> SCHAMZ INTERNATIONAL GAMING LLC</p>
+                  </div>
+                  <div>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">Account Number:</span> <span className="font-mono">200881658</span></p>
+                  </div>
+                  <div>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">IBAN:</span> <span className="font-mono">AE4704700000200881658</span></p>
+                  </div>
+                  <div>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">Branch Name:</span> BUR DUBAI (0907)</p>
+                  </div>
                 </div>
               </div>
-              <div className="w-16 h-px bg-white/20 my-3"></div>
-              <h3 className="text-h3 font-semibold text-primary mb-2">Email</h3>
-              <p className="text-gray-300 text-lg font-medium">info@shamz-gaming.ae</p>
-            </div>
-          </motion.div>
+            </motion.div>
+
+          </div>
 
         </motion.div>
       </div>

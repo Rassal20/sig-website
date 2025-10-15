@@ -9,26 +9,38 @@ const GlassCard = ({
   padding = 'p-6',
   ...props 
 }) => {
-  const variants = {
+  const glassStyles = {
     default: {
-      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+      background: 'rgba(255, 255, 255, 0.05)',
       border: '1px solid rgba(255, 255, 255, 0.15)',
-      backdropFilter: 'blur(20px) saturate(180%)',
+      backdropFilter: 'blur(8px) saturate(150%)',
+      WebkitBackdropFilter: 'blur(8px) saturate(150%)',
+      borderRadius: '14px',
+      boxShadow: '0 8px 20px rgba(0, 0, 0, 0.5)',
     },
     subtle: {
-      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
+      background: 'rgba(255, 255, 255, 0.03)',
       border: '1px solid rgba(255, 255, 255, 0.1)',
-      backdropFilter: 'blur(15px) saturate(150%)',
+      backdropFilter: 'blur(6px) saturate(130%)',
+      WebkitBackdropFilter: 'blur(6px) saturate(130%)',
+      borderRadius: '14px',
+      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
     },
     prominent: {
-      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%)',
+      background: 'rgba(255, 255, 255, 0.08)',
       border: '1px solid rgba(255, 255, 255, 0.2)',
-      backdropFilter: 'blur(25px) saturate(200%)',
+      backdropFilter: 'blur(10px) saturate(170%)',
+      WebkitBackdropFilter: 'blur(10px) saturate(170%)',
+      borderRadius: '14px',
+      boxShadow: '0 12px 25px rgba(0, 0, 0, 0.6)',
     },
-    gold: {
-      background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%)',
-      border: '1px solid rgba(255, 215, 0, 0.2)',
-      backdropFilter: 'blur(20px) saturate(180%)',
+    card: {
+      background: 'rgba(255, 255, 255, 0.05)',
+      border: '1px solid rgba(255, 255, 255, 0.15)',
+      backdropFilter: 'blur(8px) saturate(150%)',
+      WebkitBackdropFilter: 'blur(8px) saturate(150%)',
+      borderRadius: '14px',
+      boxShadow: '0 8px 20px rgba(0, 0, 0, 0.5)',
     }
   };
 
