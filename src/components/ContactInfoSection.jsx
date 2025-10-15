@@ -144,7 +144,7 @@ const ContactInfoSection = () => {
                     <p className="text-body text-muted"><span className="font-semibold text-primary">Account Number:</span> <span className="font-mono">200881658</span></p>
                   </div>
                   <div>
-                    <p className="text-body text-muted"><span className="font-semibold text-primary">IBAN:</span> <span className="font-mono">AE4704700000200881658</span></p>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">IBAN:</span> <span className="font-mono">AE470470000000200881658</span></p>
                   </div>
                   <div>
                     <p className="text-body text-muted"><span className="font-semibold text-primary">Branch Name:</span> BUR DUBAI (0907)</p>
