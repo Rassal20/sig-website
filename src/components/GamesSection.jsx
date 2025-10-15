@@ -38,6 +38,86 @@ const GamesSection = () => {
       image: "/images/xontainer.png",
       features: ["Meta Reality", "Virtual Convergence", "Spatial Computing", "Next-Gen Interface"],
       color: "from-red-500 to-orange-600"
+    },
+    {
+      id: 4,
+      title: "Andar Bahar",
+      genre: "Play-to-Earn",
+      status: "Available",
+      description: "Traditional Indian card game with blockchain rewards and competitive gameplay.",
+      image: "/images/spinix/andar-bahar.png",
+      features: ["Blockchain Rewards", "Traditional Gameplay", "Competitive Matches", "Real Earnings"],
+      color: "from-green-500 to-emerald-600"
+    },
+    {
+      id: 5,
+      title: "Book of Mines",
+      genre: "Play-to-Earn",
+      status: "Available",
+      description: "Strategic mining adventure where every decision can lead to treasure or danger.",
+      image: "/images/spinix/book-of-mines.png",
+      features: ["Strategic Gameplay", "Risk Management", "Treasure Hunting", "Crypto Rewards"],
+      color: "from-amber-500 to-yellow-600"
+    },
+    {
+      id: 6,
+      title: "Crash X Football",
+      genre: "Play-to-Earn",
+      status: "Available",
+      description: "Football-themed crash game combining sports excitement with earning potential.",
+      image: "/images/spinix/crash-x-football.png",
+      features: ["Sports Theme", "Crash Mechanics", "Live Multipliers", "Football Action"],
+      color: "from-blue-500 to-indigo-600"
+    },
+    {
+      id: 7,
+      title: "Crash X",
+      genre: "Play-to-Earn",
+      status: "Available",
+      description: "High-stakes multiplier game where timing is everything for maximum rewards.",
+      image: "/images/spinix/crash-x.png",
+      features: ["Multiplier Mechanics", "Real-time Action", "High Stakes", "Quick Rounds"],
+      color: "from-red-500 to-rose-600"
+    },
+    {
+      id: 8,
+      title: "Dice Thrice",
+      genre: "Play-to-Earn",
+      status: "Available",
+      description: "Classic dice game with modern blockchain integration and earning mechanics.",
+      image: "/images/spinix/dice-thrice.png",
+      features: ["Classic Dice", "Triple Chances", "Blockchain Integration", "Fair Gaming"],
+      color: "from-purple-500 to-violet-600"
+    },
+    {
+      id: 9,
+      title: "Sic Bo",
+      genre: "Play-to-Earn",
+      status: "Available",
+      description: "Ancient Chinese dice game reimagined with cryptocurrency rewards.",
+      image: "/images/spinix/sic-bo.png",
+      features: ["Ancient Game", "Multiple Bets", "Crypto Rewards", "Traditional Rules"],
+      color: "from-orange-500 to-red-600"
+    },
+    {
+      id: 10,
+      title: "Teen Patti",
+      genre: "Play-to-Earn",
+      status: "Available",
+      description: "Popular Indian poker variant with blockchain-powered tournaments and rewards.",
+      image: "/images/spinix/teen-patti.png",
+      features: ["Indian Poker", "Tournament Play", "Blockchain Rewards", "Social Gaming"],
+      color: "from-teal-500 to-cyan-600"
+    },
+    {
+      id: 11,
+      title: "Xoc Dia",
+      genre: "Play-to-Earn",
+      status: "Available",
+      description: "Vietnamese traditional game enhanced with modern earning opportunities.",
+      image: "/images/spinix/xoc-dia.png",
+      features: ["Vietnamese Game", "Traditional Rules", "Modern Rewards", "Cultural Gaming"],
+      color: "from-pink-500 to-purple-600"
     }
   ];
 
@@ -116,6 +196,21 @@ const GamesSection = () => {
     }
   };
 
+  // Navigation functions for arrows
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      const cardWidth = 280 + 32; // card width + margins
+      scrollRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      const cardWidth = 280 + 32; // card width + margins
+      scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="games" className="section bg-gradient-dark relative overflow-hidden">
       <div className="container relative z-10">
@@ -139,15 +234,15 @@ const GamesSection = () => {
         <div className="relative">
           <div 
             ref={scrollRef}
-            className="flex overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar py-4 justify-center"
+            className="flex overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar py-4 w-screen -mx-4"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
-              paddingLeft: 'calc(50vw - 160px)', // Center the first card
-              paddingRight: 'calc(50vw - 160px)', // Center the last card
-              paddingTop: '16px', // Add vertical padding for hover scaling
-              paddingBottom: '24px' // Extra bottom padding
+              paddingLeft: '80px',
+              paddingRight: '80px',
+              paddingTop: '16px',
+              paddingBottom: '24px'
             }}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -157,7 +252,7 @@ const GamesSection = () => {
               <motion.div
                 key={game.id}
                 data-card-index={index}
-                className={`game-card flex-shrink-0 snap-center transition-all duration-500 ${
+                className={`game-card flex-shrink-0 snap-start transition-all duration-500 ${
                   centerCard === index 
                     ? 'animate-pulse' 
                     : ''
@@ -166,7 +261,7 @@ const GamesSection = () => {
                   // Smaller card dimensions with proper proportions
                   width: 'clamp(240px, 15vw, 280px)', // Reduced from 18vw to 15vw
                   height: 'clamp(340px, 25vh, 380px)', // Reduced from 28vh to 25vh
-                  marginLeft: 'clamp(8px, 1vw, 16px)', // Reduced margins
+                  marginLeft: index === 0 ? '0' : 'clamp(8px, 1vw, 16px)', // No left margin for first card
                   marginRight: 'clamp(8px, 1vw, 16px)'
                 }}
                 variants={cardVariants}
@@ -256,6 +351,25 @@ const GamesSection = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+          
+          {/* Navigation Arrows - Below Slider, Center Aligned */}
+          <div className="flex justify-center items-center gap-4 mt-8">
+            <button
+              onClick={scrollLeft}
+              className="bg-black/80 hover:bg-black/95 backdrop-blur-md border-2 border-yellow-400/60 hover:border-yellow-400 rounded-full w-12 h-12 transition-all duration-300 flex items-center justify-center group shadow-xl hover:shadow-yellow-400/30"
+              aria-label="Scroll left"
+            >
+              <div className="w-0 h-0 border-t-[6px] border-b-[6px] border-r-[10px] border-t-transparent border-b-transparent border-r-yellow-400 group-hover:border-r-yellow-300 transition-colors duration-300 -ml-1"></div>
+            </button>
+            
+            <button
+              onClick={scrollRight}
+              className="bg-black/80 hover:bg-black/95 backdrop-blur-md border-2 border-yellow-400/60 hover:border-yellow-400 rounded-full w-12 h-12 transition-all duration-300 flex items-center justify-center group shadow-xl hover:shadow-yellow-400/30"
+              aria-label="Scroll right"
+            >
+              <div className="w-0 h-0 border-t-[6px] border-b-[6px] border-l-[10px] border-t-transparent border-b-transparent border-l-yellow-400 group-hover:border-l-yellow-300 transition-colors duration-300 -mr-1"></div>
+            </button>
           </div>
         </div>
       </div>

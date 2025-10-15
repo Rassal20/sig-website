@@ -33,7 +33,7 @@ const ContactInfoSection = () => {
         <img 
           src="/images/bbb562e9-7515-4cfe-9fb0-75074c3e37d4.png" 
           alt="Gaming Character" 
-          className="h-full w-auto object-cover object-center scale-100 sm:scale-105 lg:scale-110 filter brightness-110"
+          className="h-full w-auto object-cover object-center scale-100 sm:scale-105 lg:scale-110 filter brightness-110 opacity-50"
           onLoad={() => console.log('Contact info background image loaded successfully')}
           onError={(e) => console.error('Contact info background image failed to load:', e)}
         />
