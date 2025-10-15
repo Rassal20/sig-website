@@ -33,7 +33,7 @@ const GlassCard = ({
   };
 
   const hoverEffects = hover ? {
-    scale: 1.02,
+    scale: 1.01,
     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 215, 0, 0.1)',
     borderColor: 'rgba(255, 215, 0, 0.3)',
   } : {};

@@ -95,7 +95,7 @@ const LicensingSection = () => {
                 <img 
                   src="/Certified Icon.svg" 
                   alt="Certified Icon" 
-                  className="w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain drop-shadow-2xl hover:scale-101 transition-transform duration-500"
                 />
                 
                 {/* Floating Elements around the icon */}

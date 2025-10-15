@@ -68,7 +68,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <motion.div 
               key={index} 
-              className="glass-card p-8 text-center group hover:scale-105 transition-transform duration-300"
+              className="glass-card p-8 text-center group hover:scale-101 transition-transform duration-300"
               variants={cardVariants}
               initial="hidden"
               animate={visibleServices.has(index) ? "visible" : "hidden"}

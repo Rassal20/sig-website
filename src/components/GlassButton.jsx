@@ -72,7 +72,7 @@ const GlassButton = ({
         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
       }}
       whileHover={!disabled ? {
-        scale: 1.05,
+        scale: 1.02,
         boxShadow: currentVariant.hoverShadow,
         background: currentVariant.hoverBg,
         borderColor: currentVariant.hoverBorder,

@@ -212,8 +212,8 @@ const GamesSection = () => {
   };
 
   return (
-    <section id="games" className="section bg-gradient-dark relative overflow-hidden">
-      <div className="container relative z-10">
+    <section id="games" className="section bg-gradient-dark relative overflow-visible">
+      <div className="container relative z-10 overflow-visible">
         <motion.div 
           className="section-header mb-12"
           ref={titleRef}
@@ -231,15 +231,17 @@ const GamesSection = () => {
         </motion.div>
 
         {/* Horizontal Slider Container */}
-        <div className="relative">
+        <div className="relative overflow-visible">
           <div 
             ref={scrollRef}
-            className="flex overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar py-4 w-screen -mx-4"
+            className="flex overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar py-4"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
-              paddingLeft: '80px',
+              width: 'calc(100vw + 96px)', // Extend significantly beyond viewport
+              marginLeft: '-48px', // Pull much further left to screen edge
+              paddingLeft: '8px', // Minimal padding for very close alignment
               paddingRight: '80px',
               paddingTop: '16px',
               paddingBottom: '24px'
@@ -261,14 +263,14 @@ const GamesSection = () => {
                   // Smaller card dimensions with proper proportions
                   width: 'clamp(240px, 15vw, 280px)', // Reduced from 18vw to 15vw
                   height: 'clamp(340px, 25vh, 380px)', // Reduced from 28vh to 25vh
-                  marginLeft: index === 0 ? '0' : 'clamp(8px, 1vw, 16px)', // No left margin for first card
+                  marginLeft: index === 0 ? '0px' : 'clamp(8px, 1vw, 16px)', // Reset first card margin with new container positioning
                   marginRight: 'clamp(8px, 1vw, 16px)'
                 }}
                 variants={cardVariants}
                 initial="hidden"
                 animate="visible"
                 whileHover={{ 
-                  scale: 1.03,
+                  scale: 1.01,
                   transition: { duration: 0.3 }
                 }}
               >

@@ -80,7 +80,7 @@ const PartnershipsSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Visit partner ${partner.name}`}
-              className="glass-card p-8 text-center group hover:scale-105 transition-transform duration-300 no-underline"
+              className="glass-card p-8 text-center group hover:scale-101 transition-transform duration-300 no-underline"
               variants={cardVariants}
               animate={visiblePartners.has(index) ? "visible" : "hidden"}
               whileHover={{ y: -10 }}

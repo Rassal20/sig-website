@@ -153,7 +153,7 @@ const ContactForm = () => {
           type="submit"
           className="form-submit-button"
           variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
+          whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.98 }}
         >
           Send Message

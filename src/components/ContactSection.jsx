@@ -175,7 +175,7 @@ const ContactSection = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={!isSubmitting ? { scale: 1.02, y: -2 } : {}}
+                whileHover={!isSubmitting ? { scale: 1.01, y: -2 } : {}}
                 whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 className={`w-full py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-300 ${
                   isSubmitting 
