@@ -98,12 +98,14 @@ const ContactInfoSection = () => {
                 <h3 className="text-h3 font-medium mb-4 text-primary">Office Addresses</h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="font-semibold text-primary">Abu Dhabi Office</p>
+                    <p className="font-semibold text-[#F2C26B]">Abu Dhabi Office</p>
                     <p className="text-body text-muted leading-relaxed">Sofitel 17-02, Abu Dhabi</p>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">Trade License:</span> <span className="font-mono">CN-6018551</span></p>
                   </div>
                   <div>
-                    <p className="font-semibold text-primary">Dubai Office</p>
+                    <p className="font-semibold text-[#F2C26B]">Dubai Office</p>
                     <p className="text-body text-muted leading-relaxed">Burj Khalifa 142-01, Dubai</p>
+                    <p className="text-body text-muted"><span className="font-semibold text-primary">Trade License:</span> <span className="font-mono">1562780</span></p>
                   </div>
                 </div>
                 <div className="w-16 h-px bg-white/20 my-4"></div>
@@ -135,7 +137,7 @@ const ContactInfoSection = () => {
                 <h3 className="text-h3 font-medium mb-4 text-primary">Financial Channel</h3>
                 <div className="space-y-3">
                   <div>
-                    <p className="text-body text-muted"><span className="font-semibold text-primary">Bank Name:</span> UBL</p>
+                    <p className="text-body text-muted"><span className="font-semibold text-[#F2C26B]">Bank Name:</span> <span className="text-[#F2C26B] font-semibold">UBL</span></p>
                   </div>
                   <div>
                     <p className="text-body text-muted"><span className="font-semibold text-primary">Account Name:</span> SCHAMZ INTERNATIONAL GAMING LLC</p>
@@ -148,6 +150,10 @@ const ContactInfoSection = () => {
                   </div>
                   <div>
                     <p className="text-body text-muted"><span className="font-semibold text-primary">Branch Name:</span> BUR DUBAI (0907)</p>
+                  </div>
+                  <div>
+                    <p className="text-body text-muted"><span className="font-semibold text-[#F2C26B]">USDT TRON Address:</span></p>
+                    <p className="text-white font-mono text-xs break-all mt-1">0x7988e31635c5cd6bebd8f3eb53122155f144fef4</p>
                   </div>
                 </div>
               </div>
