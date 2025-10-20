@@ -54,21 +54,83 @@ This creates optimized files in the `dist` folder.
 **Step 3: Upload Website Files**
 1. Navigate to the `public_html` directory
 2. If there are existing files, backup or remove them
-3. Upload all contents from your `dist` folder:
-   - `index.html`
-   - `assets/` folder (contains CSS, JS, images)
-   - `.htaccess` file (for routing support)
+3. Upload the following files and folders from your local `dist` directory to `public_html`:
+
+**EXACT FILES TO UPLOAD:**
+```
+From: C:\Users\Rasse\Desktop\Work\Schamz\Schamz-Gaming\Website\schamz-gaming\dist\
+To: public_html/
+
+Required Files:
+├── index.html                    → public_html/index.html
+├── .htaccess                     → public_html/.htaccess
+├── vite.svg                      → public_html/vite.svg
+├── Certified Icon.svg            → public_html/Certified Icon.svg
+├── Schamz-Gaming-Logo.svg        → public_html/Schamz-Gaming-Logo.svg
+├── Schamz-Gaming-icon.svg        → public_html/Schamz-Gaming-icon.svg
+├── assets/                       → public_html/assets/
+│   ├── index-[hash].css          → public_html/assets/index-[hash].css
+│   └── index-[hash].js           → public_html/assets/index-[hash].js
+└── images/                       → public_html/images/
+    ├── 7507_ho_00_p_2048x1536-1-1.png
+    ├── abstract-bg-element-1.svg
+    ├── abstract-bg-element-2.svg
+    ├── bbb562e9-7515-4cfe-9fb0-75074c3e37d4.png
+    ├── cof.png
+    ├── ethereal-legends-cover.svg
+    ├── neogenesis.png
+    ├── neon-velocity-cover.svg
+    ├── quantum-shift-cover.svg
+    ├── shadow-realm-cover.svg
+    ├── spinix/ (entire folder)
+    ├── stellar-conquest-cover.svg
+    ├── xontainer.png
+    └── [all other image files]
+```
+
+**IMPORTANT:** 
+- Upload ALL contents of the `dist` folder (not the folder itself)
+- The `.htaccess` file is CRITICAL - ensure it's uploaded to the root of `public_html`
+- Maintain the exact folder structure as shown above
 4. Ensure all files are uploaded to the root of `public_html`
 
 **Alternative: FTP Upload Method**
-1. In SiteGround Site Tools, go to **Files** → **FTP Manager**
-2. Create FTP credentials or use existing ones
-3. Use an FTP client (FileZilla recommended):
-   - Host: Your domain or SiteGround FTP server
-   - Username: Your FTP username
-   - Password: Your FTP password
-   - Port: 21
-4. Upload all `dist` folder contents to `public_html`
+
+If you prefer using FTP client (FileZilla, WinSCP, etc.):
+
+**Step 1: Get FTP Credentials**
+1. In SiteGround Site Tools, go to **Site** → **FTP Accounts**
+2. Note down your FTP credentials:
+   - **Host**: Your domain or server IP
+   - **Username**: Your FTP username
+   - **Password**: Your FTP password
+   - **Port**: 21 (standard FTP) or 22 (SFTP)
+
+**Step 2: Connect and Upload**
+1. Open your FTP client and connect using the credentials
+2. Navigate to the `public_html` directory on the server
+3. On your local computer, navigate to:
+   ```
+   C:\Users\Rasse\Desktop\Work\Schamz\Schamz-Gaming\Website\schamz-gaming\dist\
+   ```
+4. **Upload these exact files and folders:**
+   ```
+   LOCAL PATH → SERVER PATH
+   
+   dist/index.html                    → public_html/index.html
+   dist/.htaccess                     → public_html/.htaccess
+   dist/vite.svg                      → public_html/vite.svg
+   dist/Certified Icon.svg            → public_html/Certified Icon.svg
+   dist/Schamz-Gaming-Logo.svg        → public_html/Schamz-Gaming-Logo.svg
+   dist/Schamz-Gaming-icon.svg        → public_html/Schamz-Gaming-icon.svg
+   dist/assets/ (entire folder)       → public_html/assets/
+   dist/images/ (entire folder)       → public_html/images/
+   ```
+
+**Step 3: Verify Upload**
+1. Ensure all files are in the root of `public_html` (not in a subfolder)
+2. Check that the `.htaccess` file is present (it may be hidden)
+3. Verify the `assets` and `images` folders maintain their structure
 
 ### Phase 3: Verification and Testing
 
@@ -144,16 +206,66 @@ The included `.htaccess` file provides:
 - **Browser Caching**: Caches static assets for better performance  
 - **Security Headers**: Basic protection against common attacks
 
-### File Structure After Deployment
+## Quick Reference: Files to Upload
+
+### Source Directory: `dist/`
+### Target Directory: `public_html/` (on SiteGround server)
+
+#### Complete File Mapping:
+
+**Root Files:**
+- `dist/index.html` → `public_html/index.html`
+- `dist/vite.svg` → `public_html/vite.svg`
+- `dist/sitemap.xml` → `public_html/sitemap.xml` (SEO)
+- `dist/robots.txt` → `public_html/robots.txt` (SEO)
+- `.htaccess` → `public_html/.htaccess` (from project root)
+
+**Assets Folder:**
+- `dist/assets/` → `public_html/assets/`
+  - All CSS files (e.g., `index-mW9WgGT2.css`)
+  - All JavaScript files (e.g., `index-rp_noKNk.js`)
+
+**Images Folder:**
+- `dist/images/` → `public_html/images/`
+  - All game images and assets
+  - Logo files
+  - Background images
+
+### Complete File Mapping
 ```
-public_html/
-├── index.html
-├── .htaccess
-└── assets/
-    ├── index-[hash].css
-    ├── index-[hash].js
-    └── [other assets]
+LOCAL FILE/FOLDER                                    → SERVER LOCATION
+────────────────────────────────────────────────────────────────────────────
+dist/index.html                                     → public_html/index.html
+dist/.htaccess                                       → public_html/.htaccess
+dist/vite.svg                                        → public_html/vite.svg
+dist/Certified Icon.svg                              → public_html/Certified Icon.svg
+dist/Schamz-Gaming-Logo.svg                          → public_html/Schamz-Gaming-Logo.svg
+dist/Schamz-Gaming-icon.svg                          → public_html/Schamz-Gaming-icon.svg
+
+dist/assets/index-[hash].css                         → public_html/assets/index-[hash].css
+dist/assets/index-[hash].js                          → public_html/assets/index-[hash].js
+
+dist/images/7507_ho_00_p_2048x1536-1-1.png          → public_html/images/7507_ho_00_p_2048x1536-1-1.png
+dist/images/abstract-bg-element-1.svg                → public_html/images/abstract-bg-element-1.svg
+dist/images/abstract-bg-element-2.svg                → public_html/images/abstract-bg-element-2.svg
+dist/images/bbb562e9-7515-4cfe-9fb0-75074c3e37d4.png → public_html/images/bbb562e9-7515-4cfe-9fb0-75074c3e37d4.png
+dist/images/cof.png                                  → public_html/images/cof.png
+dist/images/ethereal-legends-cover.svg               → public_html/images/ethereal-legends-cover.svg
+dist/images/neogenesis.png                           → public_html/images/neogenesis.png
+dist/images/neon-velocity-cover.svg                  → public_html/images/neon-velocity-cover.svg
+dist/images/quantum-shift-cover.svg                  → public_html/images/quantum-shift-cover.svg
+dist/images/shadow-realm-cover.svg                   → public_html/images/shadow-realm-cover.svg
+dist/images/spinix/ (entire folder + contents)       → public_html/images/spinix/
+dist/images/stellar-conquest-cover.svg               → public_html/images/stellar-conquest-cover.svg
+dist/images/xontainer.png                            → public_html/images/xontainer.png
 ```
+
+### Critical Notes
+- **NEVER upload the `dist` folder itself** - only its contents
+- **Include SEO Files**: Don't forget `sitemap.xml` and `robots.txt` for search engine optimization
+- **The `.htaccess` file is MANDATORY** - without it, React Router won't work
+- **Maintain exact folder structure** - especially `assets/` and `images/` folders
+- **File names are case-sensitive** - upload exactly as shown
 
 ## Important Notes
 
