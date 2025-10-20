@@ -5,7 +5,7 @@ const LicensingSection = () => {
   const [ref, isVisible] = useScrollAnimation(0.1);
 
   const authorities = [
-    "General Commercial Gaming Regulatory Authority",
+    "General Commercial Gaming Regulatory Authority - in process",
     "Abu Dhabi Registration Authority", 
     "Department of Economic Development – Abu Dhabi",
     "Judicial Department",
